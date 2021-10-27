@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let studenti = [
+                {
+                    ime: "Marko",
+                    prezime: "Marković",
+                    grad: "Pula",
+                },
+                {
+                    ime: "Iva",
+                    prezime: "Ivić",
+                    grad: "Našice",
+                },
+                {
+                    ime: "Lucija",
+                    prezime: "Lucić",
+                    grad: "Zagreb",
+                },
+                {
+                    ime: "Nikola",
+                    prezime: "Nikolić",
+                    grad: "Rijeka",
+                },
+            ];
+            function napredna_pretraga(lista, pojam) {
+                pojmovi = pojam.toLowerCase().split(" ");
+
+                for (let item of lista) {
+                    let sadrzi = true;
+                    student =
+                        `${item.ime}${item.prezime}${item.grad}`.toLowerCase();
+
+                    for (let pojam of pojmovi) {
+                        if (!student.includes(pojam)) {
+                            sadrzi = false;
+                        }
+                    }
+                    if (sadrzi) return lista.indexOf(item);
+                }
+            }
+            console.assert(napredna_pretraga(studenti, "ma ić") == 0); // → prvi student
+            console.assert(napredna_pretraga(studenti, "ko lić ri") == 3); // → zadnji student
+            console.assert(napredna_pretraga(studenti, "ić za") == 2); // → treći student
+            console.assert(napredna_pretraga(studenti, "ić ko la ri") == 3); // → zadnji student;
+        </script>
+    </body>
+</html>
