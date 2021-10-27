@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let bodovi = prompt("Unesi broj bodova");
+            let ocjena;
+            let poruka;
+
+            // tvoj kod
+            bodovi = Number(bodovi);
+
+            izracunajOcjenu = (bodovi) => {
+                if (bodovi < 50) return 1;
+                if (bodovi < 60) return 2;
+                if (bodovi < 76) return 3;
+                if (bodovi < 89) return 4;
+                return 5;
+            };
+
+            ocjena = izracunajOcjenu(bodovi);
+
+            poruka =
+                ocjena === 1
+                    ? `Niste polozili, ocjena: ${ocjena}`
+                    : `Cestitam!, ocjena: ${ocjena}`;
+
+            console.log(poruka);
+        </script>
+    </body>
+</html>
