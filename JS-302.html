@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function istiZnakovi(rijec) {
+                let brojaci = [];
+                for (let i = 0; i < rijec.length; i++) {
+                    let brojacPojava = 1;
+
+                    while (i + 1 < rijec.length && rijec[i] == rijec[i + 1]) {
+                        i++;
+                        brojacPojava++;
+                    }
+                    brojaci.push(brojacPojava);
+                }
+                return Math.max(...brojaci);
+            }
+
+            console.log(istiZnakovi("baaaccd"));
+            console.log(istiZnakovi("ba2dll"));
+        </script>
+    </body>
+</html>
